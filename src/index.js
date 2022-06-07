@@ -1,14 +1,9 @@
-import _ from 'lodash';
-import './style.css';
+const stringLength = (string) => string.length;
 
-function component() {
-  const element = document.createElement('div');
-
-  // Lodash, now imported by this script
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  element.classList.add('hello');
-
-  return element;
+const stringLength1To10 = string => {
+  if (string.length < 1 || string.length > 10) {
+    throw new Error('incorrect string size');
+  }
 }
 
-document.body.appendChild(component());
+console.log(stringLength1To10('12345678901'));
