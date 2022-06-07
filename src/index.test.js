@@ -96,3 +96,16 @@ describe('Calculator', () => {
     });
   });
 })
+
+test('string with the first character capitalized', () => {
+  // arrange
+  const capitalize = string => string.charAt(0).toUpperCase() + string.substr(1).toLowerCase();
+  const str = 'capital';
+
+  //act
+  const result = capitalize(str);
+  
+  //assert
+  expect(result).toBe('Capital');
+  }
+);
