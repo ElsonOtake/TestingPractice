@@ -6,4 +6,6 @@ const stringLength1To10 = string => {
   }
 }
 
-console.log(stringLength1To10('12345678901'));
+const reverseString = string => string.split('').reverse().join('');
+
+console.log(reverseString('12345678901'));
