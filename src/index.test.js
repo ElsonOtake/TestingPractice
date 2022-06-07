@@ -1,3 +1,19 @@
+class Calculator {
+
+  add(a, b) {
+    return a + b;
+  }
+  subtract(a, b) {
+    return a - b;
+  }
+  multiply(a, b) {
+    return a * b;
+  }
+  divide(a, b) {
+    return a / b;
+  }
+}
+
 test('returning string characters count', () => {
   // arrange
   const stringLength = string => string.length;
@@ -40,3 +56,43 @@ test('return reversed string', () => {
   //assert
   expect(result).toBe('0987654321');
 });
+
+const calc = new Calculator;
+describe('Calculator', () => {
+  describe.each([
+    {a: 1, b: 1, expected: 2},
+    {a: 1, b: 2, expected: 3},
+    {a: 2, b: 1, expected: 3},
+  ])('add($a, $b)', ({a, b, expected}) => {
+    test(`returns ${expected}`, () => {
+      expect(calc.add(a, b)).toBe(expected);
+    });
+  });
+  describe.each([
+    {a: 1, b: 1, expected: 0},
+    {a: 1, b: 2, expected: -1},
+    {a: 2, b: 1, expected: 1},
+  ])('subtract($a, $b)', ({a, b, expected}) => {
+    test(`returns ${expected}`, () => {
+      expect(calc.subtract(a, b)).toBe(expected);
+    });
+  });
+  describe.each([
+    {a: 1, b: 1, expected: 1},
+    {a: 1, b: 2, expected: 2},
+    {a: 2, b: 1, expected: 2},
+  ])('multiply($a, $b)', ({a, b, expected}) => {
+    test(`returns ${expected}`, () => {
+      expect(calc.multiply(a, b)).toBe(expected);
+    });
+  });
+  describe.each([
+    {a: 1, b: 1, expected: 1},
+    {a: 1, b: 2, expected: 0.5},
+    {a: 2, b: 1, expected: 2},
+  ])('divide($a, $b)', ({a, b, expected}) => {
+    test(`returns ${expected}`, () => {
+      expect(calc.divide(a, b)).toBeCloseTo(expected);
+    });
+  });
+})
