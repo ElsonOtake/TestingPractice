@@ -1,19 +1,11 @@
 class Calculator {
-  static add(a, b) {
-    return a + b;
-  }
+  static add = (a, b) => a + b;
 
-  static subtract(a, b) {
-    return a - b;
-  }
+  static subtract = (a, b) => a - b;
 
-  static multiply(a, b) {
-    return a * b;
-  }
+  static multiply = (a, b) => a * b;
 
-  static divide(a, b) {
-    return a / b;
-  }
+  static divide = (a, b) => a / b;
 }
 
 test('returning string characters count', () => {
@@ -57,7 +49,6 @@ test('return reversed string', () => {
   expect(result).toBe('0987654321');
 });
 
-// const calc = new Calculator();
 describe('Calculator', () => {
   describe.each([
     { a: 1, b: 1, expected: 2 },
